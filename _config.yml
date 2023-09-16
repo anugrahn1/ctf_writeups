@@ -1,4 +1,3 @@
-remote_theme: jekyll/minima
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -32,7 +31,8 @@ github_username:  anugrahn1
 
 # Build settings
 # theme: jekyll-theme-hacker
-theme: minima
+remote_theme: jekyll/minima
+#theme: minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
