@@ -34,6 +34,7 @@ github_username:  anugrahn1
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 minima:
   skin: dark #dark mode for minima
 
