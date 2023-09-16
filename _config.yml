@@ -34,7 +34,8 @@ github_username:  anugrahn1
 theme: minima
 plugins:
   - jekyll-feed
-
+minima:
+  skin: classic #dark mode for minima
 
 defaults:
   -
