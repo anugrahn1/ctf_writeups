@@ -35,7 +35,7 @@ theme: minima
 plugins:
   - jekyll-feed
 minima:
-  skin: classic #dark mode for minima
+  skin: dark #dark mode for minima
 
 defaults:
   -
