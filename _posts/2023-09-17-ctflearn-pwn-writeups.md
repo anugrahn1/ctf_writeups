@@ -5,7 +5,9 @@ permalink: "/ctflearn-pwn"
 
 I plan to just keep adding PWN writeups here from [CTFlearn](https://ctflearn.com/).
 
-## Favorite Color [60 PTS]
+1. [Favorite Color](#favorite-color-60-pts)
+
+## Favorite Color [60 PTS Medium]
 
 Source code is provided:
 
