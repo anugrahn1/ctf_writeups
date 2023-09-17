@@ -12,6 +12,7 @@ gem "jekyll", "~> 4.3.2"
 gem "minima", git: "https://github.com/jekyll/minima"
 gem 'jekyll-theme-hacker', '~> 0.2.0'
 gem "jekyll-remote-theme"
+gem "rouge"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
