@@ -48,7 +48,7 @@ int main(char argc, char** argv) {
 }
 ```
 
-We can see that good will always be 0 because if you `XOR` anything with itself it returns 0, and when you `AND` anything with 0, it will also return 0.
+We can see that `good` will always be 0 because if you `XOR` anything with itself it returns 0, and when you `AND` anything with 0, it will also return 0.
 
 ```c
 int good = 0;
