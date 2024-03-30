@@ -21,5 +21,4 @@ jekyll serve --draft
 title: "title"
 permalink: "/link"
 ---
-
 ```
