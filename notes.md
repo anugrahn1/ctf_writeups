@@ -1,4 +1,8 @@
+# Notes
+
+
 ## Github
+---
 ```sh
 git add <files>
 git commit -m "message"
@@ -6,7 +10,7 @@ git push origin gh-pages
 ```
 
 ## Jekyll
-
+---
 ```sh
 # See site WITHOUT drafts
 jekyll serve
@@ -15,7 +19,7 @@ jekyll serve --draft
 ```
 
 ## Blog Post Header
-
+---
 ```
 ---
 title: "title"
