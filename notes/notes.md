@@ -1,3 +1,6 @@
+---
+published: false
+---
 # Notes
 
 ## Github
