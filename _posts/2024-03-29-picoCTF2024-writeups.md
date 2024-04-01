@@ -51,6 +51,8 @@ permalink: "/pico2024"
     5. [WinAntiDbg0x300 WRITEUP NOT DONE](#winantidbg0x300-400-pts-need-to-finish)
     6. [Classic Crackme 0x100](#classic-crackme-0x100-300-pts)
 6. [Cryptography](#cryptography)
+    1. [interencdec](#interencdec-50-pts)
+    2. [C3](#c3-200-pts)
 
 # Binary Exploitation
 ---
