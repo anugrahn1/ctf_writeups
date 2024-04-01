@@ -26,6 +26,7 @@ jekyll serve --draft
 ---
 title: "title"
 permalink: "/link"
+published: true/false   
 ---
 ```
 ## Markdown
