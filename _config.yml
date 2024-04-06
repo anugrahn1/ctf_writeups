@@ -4,7 +4,7 @@ title: skillz' writeups
 email: pnanugrah@gmail.com
 description: >- #CTF writeups for challenges that I like, I probably will focus on pwn more than other ctf categories. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://anugrahn1.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 remote_theme: jekyll/minima   #using remote theme doesn't let social media icons work
 # theme: minima
