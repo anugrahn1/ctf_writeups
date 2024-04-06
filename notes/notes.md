@@ -10,6 +10,15 @@ git add <files>
 git commit -m "message"
 git push origin gh-pages
 ```
+`origin` is an alias for the github repo's url
+
+to see all aliases, run 
+
+```sh
+git remote -v 
+```
+`gh-pages` is just the branch name.
+
 
 ## Jekyll
 ---
