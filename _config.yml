@@ -11,6 +11,7 @@ remote_theme: jekyll/minima   #using remote theme doesn't let social media icons
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-sitemap
 minima:
   skin: dark #dark mode for minima
 
