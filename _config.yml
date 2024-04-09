@@ -24,3 +24,6 @@ defaults:
       #values
       layout: "post"
       author: "skillz"
+
+github:
+  repo: https://github.com/anugrahn1
